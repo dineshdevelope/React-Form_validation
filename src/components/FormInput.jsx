@@ -5,9 +5,9 @@ const FormInput = ({
   type,
   name,
   placeholder,
-  value,
-  handleOnchange,
   required,
+  register,
+  error,
 }) => {
   return (
     <div className="space-y-2 my-3">
@@ -20,11 +20,11 @@ const FormInput = ({
         type={type}
         name={name}
         placeholder={placeholder}
-        value={value}
-        onChange={handleOnchange}
         className="outline-none p-2 bg-indigo-200 w-full  lg:w-1/2"
         required={required}
+        {...register}
       />
+      {error && <small className="text-red-800 block">{error.message}</small>}
     </div>
   );
 };

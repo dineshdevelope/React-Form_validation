@@ -4,9 +4,9 @@ const FormTextArea = ({
   label,
   name,
   placeholder,
-  value,
-  handleOnchange,
   required,
+  error,
+  register,
 }) => {
   return (
     <div className="space-y-2 my-3">
@@ -18,11 +18,11 @@ const FormTextArea = ({
         id={name}
         name={name}
         placeholder={placeholder}
-        value={value}
-        onChange={handleOnchange}
         required={required}
         className="outline-none p-2 bg-indigo-200 w-full lg:w-1/2"
+        {...register}
       ></textarea>
+      {error && <small className="text-red-800 block">{error.message}</small>}
     </div>
   );
 };
