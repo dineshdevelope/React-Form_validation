@@ -2,6 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../components/FormInput";
 import FormTextArea from "../components/FormTextArea";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchama = z.object({
+  fullName: z.string().min(3).max(20),
+  Age: z.string(),
+  textArea: z.string().min(10).max(200),
+});
 
 const ContactPage = () => {
   const {
@@ -9,7 +17,7 @@ const ContactPage = () => {
     handleSubmit,
 
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: zodResolver(formSchama) });
   const sendInfo = (data) => {
     console.log(data);
   };
@@ -24,17 +32,7 @@ const ContactPage = () => {
             name="fullName"
             placeholder="Enter your Fullname"
             type="text"
-            register={register("fullName", {
-              required: "This field is required",
-              minLength: {
-                value: 3,
-                message: "This field is required minimum 3 characters",
-              },
-              maxLength: {
-                value: 20,
-                message: "This field not exceed morethen 20 characters",
-              },
-            })}
+            register={register("fullName")}
             error={errors.fullName}
           />
           <FormInput
@@ -42,17 +40,7 @@ const ContactPage = () => {
             name="Age"
             placeholder="Enter your Age"
             type="number"
-            register={register("Age", {
-              required: "This field is required",
-              min: {
-                value: 18,
-                message: "Age should be minimum 18",
-              },
-              max: {
-                value: 60,
-                message: "Age should not exceed 60",
-              },
-            })}
+            register={register("Age")}
             error={errors.Age}
           />
 
@@ -61,17 +49,7 @@ const ContactPage = () => {
             name="textArea"
             label="Enter your description"
             placeholder="Enter your message briefly"
-            register={register("textArea", {
-              required: "This field is required",
-              minLength: {
-                value: 20,
-                message: "This field required minimum 20 characters",
-              },
-              maxLength: {
-                value: 200,
-                message: "This field allowed maximum 200 characters",
-              },
-            })}
+            register={register("textArea")}
             error={errors.textArea}
           />
           <button className="px-4 py-3 rounded bg-yellow-400 ">Submit</button>

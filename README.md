@@ -28,6 +28,12 @@ Create a blog site and Form in react js to learn react reuseable component & Rea
 
 11.React Form Validation (React-Hook-Form)
 
+12.Custom Validation with React-Hook-Form
+
+13.Zod & Zod Resolver
+
+14.Schema Validation (Reduce Custom Validation)
+
 ### Vite + React
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

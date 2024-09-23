@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="bg-green-300 flex justify-between p-5 items-center">
+    <div className="bg-green-300 flex justify-between p-2 sm:p-3 md:p-5 items-center">
       <div>
-        <Link className="font-semibold text-gray-800" to={"/"}>
+        <Link className=" font-light sm:font-semibold text-gray-800" to={"/"}>
           CyberDude Interns
         </Link>
       </div>

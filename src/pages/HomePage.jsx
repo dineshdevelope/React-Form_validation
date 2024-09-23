@@ -10,7 +10,7 @@ const HomePage = () => {
       <h4 className="text-2xl underline font-semibold text-center mb-0 pt-2 text-blue-800 font-serif">
         Cyber Dude Networks Interns Profile
       </h4>
-      <div className="grid md:grid-cols- lg:grid-cols-2  md:gap-5">
+      <div className="sm:grid sm:grid-cols-1 lg:grid-cols-2 gap-2 md:gap-5">
         {profileBlog.map((item) => {
           return (
             <ProfileCard

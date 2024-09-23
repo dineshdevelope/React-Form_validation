@@ -18,7 +18,7 @@ const ProfileCard = ({
       <h1 className="font-semibold pt-1 text-xl ">{name}</h1>
       <h1>Junior Full-Stack Engineer </h1>
 
-      <div className="flex justify-center space-x-3">
+      <div className="flex-1 md:flex justify-center  space-x-3">
         <a href={tasks} target="_blank">
           <button className="flex justify-center items-center bg-blue-500 p-2 rounded-md space-x-1">
             <svg
